@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="js/main.js"></script>
+    <link href="css/main.css" rel="stylesheet" type="text/css" />
+    <script defer src="jquery-3.4.1.min.js"></script>
+
+
+
+    <title>Honest Cheat</title>
+</head>
+<body>
+    <h1>Blackjack: An Honest Cheat</h1>
+    <table id="cardTable">
+        <tr id="dealer">
+            <td>Dealer</td>
+            <td>Card 1</td>
+            <td>Card 2</td>
+            <td>score</td>
+        </tr>
+        <tr id="player">
+            <td>Player</td>
+            <td>Card 1</td>
+            <td>Card 2</td>
+            <td>score</td>
+        </tr>
+    </table>
+    <div>
+        <button type="button" id="restart">Restart</button>
+        <button type="button" id="stay">Stay</button>
+        <button type="button" id="hit">Hit</button>
+    </div>
+    <aside>
+        <p>
+            <iframe id="cardCount" src="https://wizardofodds.com/games/blackjack/ace-five-count/"></iframe>
+        </p>
+    </aside>
+</body>
+</html>
