@@ -18,3 +18,6 @@ aside > p {
 #cardCount {
     height: 100vh;
 }
+body {
+    text-align: center;
+}
