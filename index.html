@@ -3,40 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script defer src="js/main.js"></script>
+    <script src="js/main.js" async="false"></script>
     <link href="css/main.css" rel="stylesheet" type="text/css" />
-    <script defer src="jquery-3.4.1.min.js"></script>
-
-
 
     <title>Honest Cheat</title>
 </head>
 <body>
-    <h1>Blackjack: An Honest Cheat!!!</h1>
-    <h2>The tutorial will help you learn to be a better player, with great power comes great responsibility.</h2>
-    <table id="cardTable">
+    <h1 id="test">Blackjack: An Honest Cheat!!!</h1>
+    <h2>The tutorial will help you learn to be a better player.</h2>
+
+    <h3>
         <tr id="dealer">
-            <td>Dealer</td>
-            <td>Card 1</td>
-            <td>Card 2</td>
-            <td>score</td>
+            <td id="dealerCard">Dealer cards</td>
+            <td id="dealerCardTotal">Dealer cards</td>
+            
         </tr>
         <tr id="player">
-            <td>Player</td>
-            <td>Card 1</td>
-            <td>Card 2</td>
-            <td>score</td>
+            <td>Player Cards</td>
+            <td>Player Cards</td>
+
         </tr>
     </table>
     <div>
-        <button type="button" id="restart">Restart</button>
-        <button type="button" id="stay">Stay</button>
-        <button type="button" id="hit">Hit</button>
+        <button onclick="restart()" type="button" id="restart">Restart</button>
+        <button onclick="stay()" type="button" id="stay">Stay</button>
+        <button onclick="hit()" type="button" id="hit">Hit</button>
     </div>
     <aside>
         <p>
-            <iframe id="cardCount" src="https://wizardofodds.com/games/blackjack/ace-five-count/"></iframe>
+            <iframe id="cardCount" src="https://en.wikipedia.org/wiki/Card_counting"></iframe>
         </p>
     </aside>
 </body>
+
 </html>
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/main.js" defer></script>
+    <link href="css/main.css" rel="stylesheet" type="text/css" />
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html> -->
