@@ -64,15 +64,6 @@ function restart() {
 }
 
 document.getElementById("playerHand").innerHTML;
-// document.getElementById("playerHand").innerHTML = handTotal(playerHand);
-// document.getElementById("dealerCard").innerHTML = dealerHand;
-// document.getElementById("dealerCardTotal").innerHTML = handTotal(dealerHand);
 
 
 gameStart();
-
-// console.log("player: "+ playerHand);
-// console.log("player total: "+ handTotal(playerHand));
-
-// console.log("dealer: " + dealerHand);
-// console.log("dealer total: " + handTotal(dealerHand));
