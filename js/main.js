@@ -17,11 +17,19 @@
 /*----- cached element references -----*/
 
 /*----- event listeners -----*/
-document.getElementById('hit').addEventListener('click', test());
+document.getElementById('hit').addEventListener('click', hitTest);
+document.getElementById('stay').addEventListener('click', stayTest);
+document.getElementById('restart').addEventListener('click', restartTest);
 
 
 /*----- functions -----*/
 
-function test() {
+function hitTest() {
     console.log('The hit button is working');
+}
+function stayTest() {
+    console.log('The stay button is working');
+}
+function restartTest() {
+    console.log('The restart button is working');
 }
