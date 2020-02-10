@@ -1,23 +1,68 @@
-* {
+
+html, * {
+    font-family: sans-serif;
+    box-sizing: border-box;
+  }
+  
+  .cards {
+    width: 320px;
+    padding: 10px;
+    border: 5px solid red;
     margin: 0;
-    padding: 0;
-}
-
-aside {
-    width: 30%;
-    padding-right: .5rem;
-    margin-right: .5rem;
-    float: right;
-    color: #black;
-}
-
-aside > p {
-    margin: .5rem;
-}
-
-#cardCount {
-    height: 100vh;
-}
-body {
-    text-align: center;
-}
+  }
+  
+  #heading {
+      text-align: center;
+  }
+  
+  #gameMessages {
+    width: 320px;
+    padding: 10px;
+    border: 5px solid red;
+    margin: 0;
+  }
+  
+  #playerTitle {
+      color: blue;
+      width: 120px;
+      padding: 10px;
+      border: 5px solid red;
+      margin: 0;
+  }
+  
+  #dealerTitle {
+      color: blue;
+      width: 120px;
+      padding: 10px;
+      border: 5px solid red;
+      margin: 0;
+  }
+  
+  button {
+      background-color: blue;;
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+  }
+  
+  button:hover {
+      color: black;
+  }
+  #fold:hover {
+      background-color: red;
+  }
+  
+  #restart:hover {
+      background-color: red;
+  }
+  
+  #stay:hover {
+      background-color: yellow;
+  }
+  #hit:hover {
+      background-color:  green;
+  }
