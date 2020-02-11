@@ -18,6 +18,7 @@ const deck = buildDeck;
 let shuffledDeck = cardShuffler(deck)
 
 /*----- cached element references -----*/
+let deck = document.getElementById('pCard1');
 
 /*----- event listeners -----*/
 document.getElementById('hit').addEventListener('click', hitTest);

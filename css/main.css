@@ -10,15 +10,19 @@ h1 {
   color: orange;
   text-align: center;
   margin: 10px auto ;
+  
 }
 
+
 .cards {
-    width: 320px;
-    height: 220px;
-    padding: 10px;
-    border: 5px double grey;
+    width: 28%;
+    height: 20%;
+    padding: ;
+    border: 4px double orangered;
     margin: 0;
-    border-radius: 10mm;
+    border-radius: 2mm;
+    background-color: white;
+
   }
 
 /* #gameMessages {
@@ -27,25 +31,25 @@ h1 {
     border: 5px double red;
   } */
   
-#playerTitle, #dealerTitle {
+/* #playerTitle, #dealerTitle {
       color: blue;
       width: 100px;
       height: 60px;
       padding: 10px;
       border: 5px solid red;
       margin: 0;   
-  }
-#dealerTitle {
+  } */
+/* #dealerTitle {
   margin-top: 150px;
 }
 #playerTitle {
   margin-top: 10px;
-}
+} */
   
 
   
 button {
-      background-color:light grey;
+      background-color: #3C3E3E;
       border: outset;
       color: white;
       padding: 15px 32px;
@@ -61,15 +65,14 @@ button {
 }
 
   
-button:hover {
-      color: black;
-  }
+
 
 #restart:hover {
       background-color: red;
     }
 #stay:hover {
       background-color: yellow ;
+      color: black;
     }
 #hit:hover {
       background-color:  green;

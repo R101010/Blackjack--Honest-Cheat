@@ -3,23 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/card-deck-css/css/cardstarter.css" rel="stylesheet" />
     <link rel="stylesheet" href="css/main.css">
     <script defer src="js/main.js"></script>
     <title>Blackjack: MVP edition</title>
 </head>
+<div id="wrapper">
 <body>
     <h1 id="game">Blackjack: MVP Edition</h1>
     <main>
         <section id="dealer">
             <!-- <h2 id="dealerTitle">Dealer</h2> -->
-            <div class="cards" id="dCard1">This card will be face up</div>
-            <div class="cards" id="dCard2">This card will be face down until "Stay" is clicked.</div>
+            <img class="cards imageD1" id="dCard1" src="css/card-deck-css/images/backs/blue.svg" alt="Red Back">
+            <img class="cards imageD2" id="dCard2" src="css/card-deck-css/images/backs/blue.svg" alt="Red Back">
+
         </section>
             <h2 id="gameMessages">Game messages like "Player Bust!".</h2>
         <section id="player">
             <!-- <h2 id="playerTitle">Player</h2> -->
-            <div class="cards" id="pCard1">This card will be face up</div>
-            <div class="cards" id="pCard2">This card will be face up</div>
+
+            <img class="cards imageP1" id="pCard1" src="css/card-deck-css/images/backs/red.svg" alt="Red Back">
+            <img class="cards imageP2" id="pCard2" src="css/card-deck-css/images/backs/red.svg" alt="Red Back">
         </section>
     </main>
     <section id="buttons">
@@ -28,4 +32,6 @@
         <button id="restart">Restart</button>
     </section>
 </body>
+</div>
+
 </html>
