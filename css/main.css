@@ -4,65 +4,64 @@ html, * {
     box-sizing: border-box;
   }
   
-  .cards {
+
+.cards {
     width: 320px;
+    height: 220px;
     padding: 10px;
     border: 5px solid red;
     margin: 0;
+    align-items: center;
+    justify-content: center;
   }
   
-  #heading {
-      text-align: center;
-  }
-  
-  #gameMessages {
-    width: 320px;
+#gameMessages {
+    width: 220px;
     padding: 10px;
     border: 5px solid red;
     margin: 0;
+    display: flex;
+    
   }
   
-  #playerTitle {
+#playerTitle, #dealerTitle {
       color: blue;
-      width: 120px;
+      width: 100px;
+      height: 60px;
       padding: 10px;
       border: 5px solid red;
       margin: 0;
+      
   }
   
-  #dealerTitle {
-      color: blue;
-      width: 120px;
-      padding: 10px;
-      border: 5px solid red;
-      margin: 0;
+#dealer, #player {
+    display: flex;
   }
+
   
-  button {
+button {
       background-color: blue;;
       border: none;
       color: white;
       padding: 15px 32px;
       text-align: center;
       text-decoration: none;
-      display: inline-block;
+      display: flex;
       font-size: 16px;
-  }
+      display:inline-block;
+    }
+
   
-  button:hover {
+button:hover {
       color: black;
   }
-  #fold:hover {
+
+#restart:hover {
       background-color: red;
-  }
-  
-  #restart:hover {
-      background-color: red;
-  }
-  
-  #stay:hover {
+    }
+#stay:hover {
       background-color: yellow;
-  }
-  #hit:hover {
+    }
+#hit:hover {
       background-color:  green;
-  }
+    }
