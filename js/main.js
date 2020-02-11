@@ -11,8 +11,11 @@
 // function called winner that compares Player to dealer, closest to 21 wins.
 
 /*----- constants -----*/
-
+const suits = ['s', 'c', 'd', 'h'];
+const ranks = ['02', '03', '04', '05', '06', '07', '08', '09', '10', 'J', 'Q', 'K', 'A'];
+const deck = buildDeck;
 /*----- app's state (variables) -----*/
+let shuffledDeck = cardShuffler(deck)
 
 /*----- cached element references -----*/
 
@@ -23,13 +26,32 @@ document.getElementById('restart').addEventListener('click', restartTest);
 
 
 /*----- functions -----*/
+// buildDeck opens a new pack of cards.
+function buildDeck() {
+    let openNewPack = [];
+    suits.forEach(function(suit) {
+        ranks.forEach(function(rank) {
+            openNewPack.push({
+                face: `${suit}${rank}`,
+                value: Number(rank) || (rank === 'A' ? 11 : 10)
+            });
+        });
+    });
+    return openNewPack;
+}
+
+function cardShuffler() {
+    let randomIndex = Math.floor(Math.random() * deck.length)
+    return deck[randomIndex];
+}
 
 function hitTest() {
-    console.log('The hit button is working');
+    console.log('Hit is working')
 }
 function stayTest() {
-    console.log('The stay button is working');
+    console.log('Stay is working');
 }
 function restartTest() {
-    console.log('The restart button is working');
+    console.log('Restart is working');
 }
+

@@ -1,9 +1,8 @@
 
 html, * {
     font-family: sans-serif;
-    box-sizing: border-box;
+    box-sizing: flex;
   }
-  
 
 .cards {
     width: 320px;
@@ -16,12 +15,11 @@ html, * {
   }
   
 #gameMessages {
-    width: 220px;
-    padding: 10px;
+    width: 530px;
+    padding: 5px;
     border: 5px solid red;
-    margin: 0;
+    margin: auto;
     display: flex;
-    
   }
   
 #playerTitle, #dealerTitle {
