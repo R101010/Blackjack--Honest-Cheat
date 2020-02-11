@@ -1,5 +1,3 @@
-// Array that holds the suites
-// Array that holds the card #
 // Function that makes the deck by combining suites and #s
 // Function to shuffle the deck
 // Function that deals the cards
@@ -18,7 +16,6 @@ const deck = buildDeck;
 let shuffledDeck = cardShuffler(deck)
 
 /*----- cached element references -----*/
-let deck = document.getElementById('pCard1');
 
 /*----- event listeners -----*/
 document.getElementById('hit').addEventListener('click', hitTest);
@@ -41,9 +38,8 @@ function buildDeck() {
     return openNewPack;
 }
 
+
 function cardShuffler() {
-    let randomIndex = Math.floor(Math.random() * deck.length)
-    return deck[randomIndex];
 }
 
 function hitTest() {
