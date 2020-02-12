@@ -1,10 +1,15 @@
 
 html, * {
     font-family: sans-serif;
-    box-sizing: flex;
     background-color: black;
-    color: white;
   }
+
+body {
+    box-sizing: flex;
+    color: white;
+    min-width: 0;
+    min-height: 0;
+}
 
 h1 {
   color: orange;
@@ -14,7 +19,7 @@ h1 {
 }
 
 
-.cards {
+/* .cards {
     width: 28%;
     height: 20%;
     padding: ;
@@ -22,7 +27,18 @@ h1 {
     margin: 0;
     border-radius: 2mm;
     background-color: white;
+  } */
 
+  .cards {
+    width: 12%;
+    /* max-width: 12%; */
+    /* height: 10%; */
+    /* max-height: 20; */
+    /* padding: 0; */
+    border: 4px double orangered;
+    margin: 0;
+    border-radius: 2mm;
+    background-color: white;
   }
 
 /* #gameMessages {
@@ -46,7 +62,6 @@ h1 {
   margin-top: 10px;
 } */
   
-
   
 button {
       background-color: #3C3E3E;
@@ -63,10 +78,6 @@ button {
   justify-content: center;
   align-content: center;
 }
-
-  
-
-
 #restart:hover {
       background-color: red;
     }
