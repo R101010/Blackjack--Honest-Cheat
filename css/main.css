@@ -31,10 +31,6 @@ h1 {
 
   .cards {
     width: 12%;
-    /* max-width: 12%; */
-    /* height: 10%; */
-    /* max-height: 20; */
-    /* padding: 0; */
     border: 4px double orangered;
     margin: 0;
     border-radius: 2mm;
