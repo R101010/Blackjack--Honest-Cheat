@@ -13,7 +13,8 @@ const suits = ['s', 'c', 'd', 'h'];
 const ranks = ['02' , '03', '04', '05', '06', '07', '08', '09', '10', 'J', 'Q', 'K', 'A'];
 
 //Gets its value from buildDeck
-const deck = new Array();
+const deck = [];
+
 /*----- app's state (variables) -----*/
 
 // Holds deck value for cardShuffler, then is shuffled by it.
@@ -25,14 +26,15 @@ var dealer = [];
 
 
 /*----- event listeners -----*/
-document.getElementById('hit').addEventListener('click', hitTest);
-document.getElementById('stay').addEventListener('click', stayTest);
-document.getElementById('restart').addEventListener('click', restartTest);
+document.getElementById('hit').addEventListener('click', hit);
+document.getElementById('stay').addEventListener('click', stay);
+document.getElementById('restart').addEventListener('click', restart);
 
 
 /*----- functions -----*/
 
-init()
+init();
+
 function init(){
     buildDeck()
     cardShuffler()
@@ -41,11 +43,11 @@ function init(){
     dealerDeal()
     dealerDeal()
     render()
-}
+};
 
 function render(){
 
-}
+};
 
 // buildDeck opens a new pack of cards. 
 
@@ -58,10 +60,10 @@ function buildDeck() {
             });
         });
     });
-}
+};
 
 // Takes the new deck and shuffles it
-function cardShuffler() {
+ function cardShuffler() {
     for (var i = 1; i < 1000; i++) {
         var spot1 = Math.floor((Math.random() * shuffledDeck.length));
         var spot2 = Math.floor((Math.random() * shuffledDeck.length));
@@ -70,7 +72,7 @@ function cardShuffler() {
         shuffledDeck[spot2] = temp;
     }
 
-}
+};
 
 
 
@@ -78,21 +80,21 @@ function playerDeal(){
     var card = shuffledDeck.pop();
     player.push(card)
 
-}
+};
 function dealerDeal(){
     var card = shuffledDeck.pop();
     dealer.push(card)
-}
+};
 
 
 
-function hitTest() {
-    console.log('Hit is working')
-}
-function stayTest() {
-    console.log('Stay is working');
-}
-function restartTest() {
-    console.log('Restart is working');
-}
+function hit() {
+    document.getElementById("gameMessages").innerHTML = "HIT!";};
+function stay() {
+    document.getElementById("gameMessages").innerHTML = "STAY!";};
+
+function restart() {
+    location.reload();
+};
+
 
