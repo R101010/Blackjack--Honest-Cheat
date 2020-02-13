@@ -4,7 +4,7 @@
 
 /*----- constants -----*/
 const suits = ['s', 'c', 'd', 'h'];
-const ranks = ['02' , '03', '04', '05', '06', '07', '08', '09', '10', 'J', 'Q', 'K', 'A'];
+const ranks = [02 , 03, 04, 05, 06, 07, 08, 09, 10, 'J', 'Q', 'K', 'A'];
 
     //Gets its value from buildDeck
 const deck = [];
@@ -20,6 +20,11 @@ var player = [];
     //Gets push from dealer deal.
 var dealer = [];
 
+    //Gets the value from playerTotal
+var playerTotals = [];
+    //Gets the value from dealerTotal
+var dealerTotals = [];
+
 /*----- cached element references -----*/
 
     // Holds the card face value to display corresponding card on screen
@@ -27,10 +32,10 @@ var playerDisplayedCards = [];
 var dealerDisplayedCards = [];
 
 /*----- event listeners -----*/
+
 document.getElementById('hit').addEventListener('click', hit);
 document.getElementById('stay').addEventListener('click', stay);
 document.getElementById('restart').addEventListener('click', restart);
-
 
 /*----- functions -----*/
 
@@ -45,13 +50,14 @@ function init(){
     dealerDeal()
     playerCardDisplay()
     dealerCardDisplay()
+    playerTotal()
+    dealerTotal()
     render()
 };
 
 function render(){
 
 };
-
     //Opens a new pack of cards. 
 function buildDeck() {
     suits.forEach(function(suit) {
@@ -63,7 +69,6 @@ function buildDeck() {
         });
     });
 };
-
     // Takes the new deck and shuffles it
 function cardShuffler() {
     for (var i = 1; i < 1000; i++) {
@@ -75,8 +80,6 @@ function cardShuffler() {
     }
 
 };
-
-
     //Deals cards to player
 function playerDeal(){
     var card = shuffledDeck.pop();
@@ -103,9 +106,21 @@ function dealerCardDisplay() {
 };
 
     //Compares card totals and decides a winner
-function checkWin() {
+function checkWin() {};
 
-
+    //Grabs the value of both cards and adds them playerTotals
+function playerTotal() {
+    var sum = 0;
+    for (var i = 0; i < player.length; i++){
+        sum += player[i]["value"];
+    } playerTotals.push(sum)
+};
+    //Grabs the value of both cards and adds them to dealerTotals
+function dealerTotal() {
+    var sum = 0;
+    for (var i = 0; i < dealer.length; i++){
+        sum += dealer[i]["value"];
+    } dealerTotals.push(sum)
 };
 
 // Adds a card to the player or dealer hand and runs checkWin.
