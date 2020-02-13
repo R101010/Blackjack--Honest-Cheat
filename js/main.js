@@ -106,7 +106,9 @@ function dealerCardDisplay() {
 };
 
     //Compares card totals and decides a winner
-function checkWin() {};
+function checkWin() {
+    
+};
 
     //Grabs the value of both cards and adds them playerTotals
 function playerTotal() {
