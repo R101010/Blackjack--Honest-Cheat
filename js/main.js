@@ -1,9 +1,3 @@
-// Function that makes the deck by combining suites and #s
-// Function to shuffle the deck
-// Function that deals the cards
-// Icebox: Betting, Insurance,  
-// Buttons:
-//Restart: Resets the game to it's original state
 //stay: Player hits 'stay' it's the dealers turn
 //Hit: Adds another card to HTML, add value of card to running total, checks for bust, checks for winner.
 // function called winner that compares Player to dealer, closest to 21 wins.
@@ -12,18 +6,25 @@
 const suits = ['s', 'c', 'd', 'h'];
 const ranks = ['02' , '03', '04', '05', '06', '07', '08', '09', '10', 'J', 'Q', 'K', 'A'];
 
-//Gets its value from buildDeck
+    //Gets its value from buildDeck
 const deck = [];
 
 /*----- app's state (variables) -----*/
 
-// Holds deck value for cardShuffler, then is shuffled by it.
+    // Holds deck value for cardShuffler, then is shuffled by it.
 var shuffledDeck = deck;
+
+    //Gets push from Player deal.
 var player = [];
+
+    //Gets push from dealer deal.
 var dealer = [];
 
 /*----- cached element references -----*/
 
+    // Holds the card face value to display corresponding card on screen
+var playerDisplayedCards = [];
+var dealerDisplayedCards = [];
 
 /*----- event listeners -----*/
 document.getElementById('hit').addEventListener('click', hit);
@@ -42,6 +43,8 @@ function init(){
     playerDeal()
     dealerDeal()
     dealerDeal()
+    playerCardDisplay()
+    dealerCardDisplay()
     render()
 };
 
@@ -49,8 +52,7 @@ function render(){
 
 };
 
-// buildDeck opens a new pack of cards. 
-
+    //Opens a new pack of cards. 
 function buildDeck() {
     suits.forEach(function(suit) {
         ranks.forEach(function(rank) {
@@ -62,8 +64,8 @@ function buildDeck() {
     });
 };
 
-// Takes the new deck and shuffles it
- function cardShuffler() {
+    // Takes the new deck and shuffles it
+function cardShuffler() {
     for (var i = 1; i < 1000; i++) {
         var spot1 = Math.floor((Math.random() * shuffledDeck.length));
         var spot2 = Math.floor((Math.random() * shuffledDeck.length));
@@ -75,26 +77,46 @@ function buildDeck() {
 };
 
 
-
+    //Deals cards to player
 function playerDeal(){
     var card = shuffledDeck.pop();
     player.push(card)
 
 };
+    //Deals cards to dealer
 function dealerDeal(){
     var card = shuffledDeck.pop();
     dealer.push(card)
 };
+    // Gets the player card from player hand
+function playerCardDisplay() {
+    for (var i = 0; i < player.length; i++) {
+        playerDisplayedCards.push(player[i]["face"])
+    } 
+};
+
+    // Gets the dealer card from player hand
+function dealerCardDisplay() {
+    for (var i = 0; i < player.length; i++) {
+        dealerDisplayedCards.push(player[i]["face"])
+    } 
+};
+
+    //Compares card totals and decides a winner
+function checkWin() {
 
 
+};
+
+// Adds a card to the player or dealer hand and runs checkWin.
 
 function hit() {
     document.getElementById("gameMessages").innerHTML = "HIT!";};
 function stay() {
     document.getElementById("gameMessages").innerHTML = "STAY!";};
 
+// Refreses the page instead of reloading the values
 function restart() {
     location.reload();
 };
-
 
