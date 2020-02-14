@@ -4,7 +4,7 @@
 /*----- constants -----*/
 const suits = ['s', 'c', 'd', 'h'];
 const ranks = [02 , 03, 04, 05, 06, 07, 08, 09, 10, 'J', 'Q', 'K', 'A'];
-
+const ranksString = ["02" , "03", "04", "05", "06", "07", "08", "09", "10", 'J', 'Q', 'K', 'A'];
     //Gets its value from buildDeck
 const deck = [];
 
@@ -57,12 +57,17 @@ function init(){
 
     // This sends everything from JS to HTML to view
 function render(){
-
+    
 };
+
+document.getElementById("dCard1").src = "../css/card-deck-css/images/diamonds/diamonds-A.svg";
+
+
+
     //Opens a new pack of cards. 
 function buildDeck() {
     suits.forEach(function(suit) {
-        ranks.forEach(function(rank) {
+        ranksString.forEach(function(rank) {
             deck.push({
                 face: `${suit}${rank}`,
                 value: Number(rank) || (rank === 'A' ? 11 : 10)
@@ -112,13 +117,6 @@ function dealerCardDisplay() {
 function checkForBlackjack(){
     if (playerTotals === 21) {
         document.getElementById("gameMessages").innerHTML = "BlackJack!";
-};
-
-    //Compares card totals and decides a winner
-function checkWin() {
-
-
-
     };
 };
 
@@ -169,7 +167,7 @@ function dealerHit() {
 
 function checkWinner() {
     if (playerTotals > dealerTotals && playerTotals <= 21){
-     console.log('Win Bitches');
+     console.log('Winner winner chicken dinner');
 } else if (playerTotals = dealerTotals) {
     console.log('Push');
 } else if (dealerTotals > playerTotals && dealerTotals <= 21 ){
