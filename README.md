@@ -9,10 +9,10 @@ The idea behind this game was to make a simple MVP game of Blackjack that would 
 
 ## Screenshot:
 Wire Frame
-https://i.imgur.com/vaWWho5.jpg
+![Game Sketch] (https://i.imgur.com/vaWWho5.jpg)
 
 Finished product
-https://i.imgur.com/Y5dWlJr.png
+![BlackJack] (https://i.imgur.com/Y5dWlJr.png)
 
 ## Technologies Used:
 
