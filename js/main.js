@@ -1,6 +1,5 @@
 //stay: Player hits 'stay' it's the dealers turn
 //Hit: Adds another card to HTML, add value of card to running total, checks for bust, checks for winner.
-// function called winner that compares Player to dealer, closest to 21 wins.
 
 /*----- constants -----*/
 const suits = ['s', 'c', 'd', 'h'];
@@ -93,6 +92,7 @@ function dealerDeal(){
 };
     // Gets the player card from player hand
 function playerCardDisplay() {
+    playerDisplayedCards = []
     for (var i = 0; i < player.length; i++) {
         playerDisplayedCards.push(player[i]["face"])
     } 
@@ -126,9 +126,31 @@ function dealerTotal() {
 };
 
 // Adds a card to the player or dealer hand and runs checkWin.
-
 function hit() {
-    document.getElementById("gameMessages").innerHTML = "HIT!";};
+    var temp = 0;
+    playerDeal();
+    playerTotal();
+    playerCardDisplay();
+    temp = playerTotals.pop();
+    if ( temp > 21) {
+        document.getElementById("gameMessages").innerHTML = "You hit on that...BUST!";
+    } else {
+        document.getElementById("gameMessages").innerHTML = `Remember to stay on 17 you have ${temp}`;
+    }
+};
+function dealerHit() {
+    var temp = 0;
+    dealerDeal();
+    dealerTotal();
+    dealerCardDisplay();
+    temp = dealerTotals.pop();
+    if ( temp > 21) {
+        document.getElementById("gameMessages").innerHTML = "Dealer Busts, You win!";
+    } else {
+        document.getElementById("gameMessages").innerHTML = `Dealer has ${temp}`;
+    }
+};
+
 function stay() {
     document.getElementById("gameMessages").innerHTML = "STAY!";};
 
