@@ -11,7 +11,7 @@ const deck = [];
 /*----- app's state (variables) -----*/
 
     // Holds deck value for cardShuffler, then is shuffled by it.
-var shuffledDeck = deck;
+var shuffledDeck = [];
 
     //Gets push from Player deal.
 var player = [];
@@ -52,8 +52,10 @@ function init(){
     playerTotal()
     dealerTotal()
     render()
+    checkForBlackjack()
 };
 
+    // This sends everything from JS to HTML to view
 function render(){
 
 };
@@ -70,14 +72,15 @@ function buildDeck() {
 };
     // Takes the new deck and shuffles it
 function cardShuffler() {
+    shuffledDeck = [...deck];
     for (var i = 1; i < 1000; i++) {
         var spot1 = Math.floor((Math.random() * shuffledDeck.length));
         var spot2 = Math.floor((Math.random() * shuffledDeck.length));
         var temp = shuffledDeck[spot1];
         shuffledDeck[spot1] = shuffledDeck[spot2];
         shuffledDeck[spot2] = temp;
+        
     }
-
 };
     //Deals cards to player
 function playerDeal(){
@@ -100,14 +103,23 @@ function playerCardDisplay() {
 
     // Gets the dealer card from player hand
 function dealerCardDisplay() {
-    for (var i = 0; i < player.length; i++) {
-        dealerDisplayedCards.push(player[i]["face"])
+    dealerDisplayedCards = []
+    for (var i = 0; i < dealer.length; i++) {
+        dealerDisplayedCards.push(dealer[i]["face"])
     } 
+};
+    // Checks for Blackjack at start-up
+function checkForBlackjack(){
+    if (playerTotals === 21) {
+        document.getElementById("gameMessages").innerHTML = "BlackJack!";
 };
 
     //Compares card totals and decides a winner
 function checkWin() {
-    
+
+
+
+    };
 };
 
     //Grabs the value of both cards and adds them playerTotals
@@ -138,24 +150,39 @@ function hit() {
         document.getElementById("gameMessages").innerHTML = `Remember to stay on 17 you have ${temp}`;
     }
 };
+
 function dealerHit() {
-    var temp = 0;
+    while (dealerTotals <= 16) {
     dealerDeal();
     dealerTotal();
     dealerCardDisplay();
-    temp = dealerTotals.pop();
-    if ( temp > 21) {
-        document.getElementById("gameMessages").innerHTML = "Dealer Busts, You win!";
-    } else {
-        document.getElementById("gameMessages").innerHTML = `Dealer has ${temp}`;
+   dealerTotals = dealerTotals.pop();
+   console.log(dealerTotals)
     }
+    if (dealerTotals < 21) {
+        console.log(" Over 16 but less than 21")
+    } else if ( dealerTotals > 21) {
+        document.getElementById("gameMessages").innerHTML = "Dealer Bust, You win!";
+    };
+    console.log("Almost there");
 };
 
+function checkWinner() {
+    if (playerTotals > dealerTotals && playerTotals <= 21){
+     console.log('Win Bitches');
+} else if (playerTotals = dealerTotals) {
+    console.log('Push');
+} else if (dealerTotals > playerTotals && dealerTotals <= 21 ){
+    console.log('Dealer Wins');
+}
+};
+    // This will run the dealer function 
 function stay() {
-    document.getElementById("gameMessages").innerHTML = "STAY!";};
+    dealerHit();
+    checkWinner()    
+};
 
 // Refreses the page instead of reloading the values
 function restart() {
     location.reload();
 };
-
