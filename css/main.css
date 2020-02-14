@@ -19,23 +19,23 @@ h1 {
 }
 
 
-/* .cards {
-    width: 28%;
+.cards {
+    width: 12%;
     height: 20%;
     padding: ;
     border: 4px double orangered;
     margin: 0;
     border-radius: 2mm;
     background-color: white;
-  } */
+  }
 
-  .cards {
+  /* .cards {
     width: 22%;
     border: 4px double orangered;
     margin: 0;
     border-radius: 2mm;
     background-color: white;
-  }
+  } */
 
 /* #gameMessages {
     width: 0 0 0 20px;

@@ -1,11 +1,10 @@
-//stay: Player hits 'stay' it's the dealers turn
-//Hit: Adds another card to HTML, add value of card to running total, checks for bust, checks for winner.
 
 /*----- constants -----*/
 const suits = ['s', 'c', 'd', 'h'];
 const ranks = [02 , 03, 04, 05, 06, 07, 08, 09, 10, 'J', 'Q', 'K', 'A'];
 const ranksString = ["02" , "03", "04", "05", "06", "07", "08", "09", "10", 'J', 'Q', 'K', 'A'];
-    //Gets its value from buildDeck
+const ace = ['sA','hA','cA','dA'];
+//Gets its value from buildDeck
 const deck = [];
 
 /*----- app's state (variables) -----*/
@@ -19,13 +18,13 @@ var player = [];
     //Gets push from dealer deal.
 var dealer = [];
 
-    //Gets the value from playerTotal
-var playerTotals = [];
-    //Gets the value from dealerTotal
-var dealerTotals = [];
+
 
 /*----- cached element references -----*/
-
+    //Gets the value from playerTotal
+var playerTotals = [];
+     //Gets the value from dealerTotal
+var dealerTotals = [];
     // Holds the card face value to display corresponding card on screen
 var playerDisplayedCards = [];
 var dealerDisplayedCards = [];
@@ -57,11 +56,15 @@ function init(){
 
     // This sends everything from JS to HTML to view
 function render(){
-    
+    document.getElementById("pCard1").className += playerDisplayedCards[0];
+    document.getElementById("pCard2").className += playerDisplayedCards[1];
+    document.getElementById("dCard1").className += dealerDisplayedCards[0];
+
 };
 
-document.getElementById("dCard1").src = "../css/card-deck-css/images/diamonds/diamonds-A.svg";
-
+function testAdd(){
+    
+};
 
 
     //Opens a new pack of cards. 
@@ -100,7 +103,7 @@ function dealerDeal(){
 };
     // Gets the player card from player hand
 function playerCardDisplay() {
-    playerDisplayedCards = []
+    playerDisplayedCards = [];
     for (var i = 0; i < player.length; i++) {
         playerDisplayedCards.push(player[i]["face"])
     } 
@@ -122,11 +125,12 @@ function checkForBlackjack(){
 
     //Grabs the value of both cards and adds them playerTotals
 function playerTotal() {
-    var sum = 0;
+    playerTotals = 0;
     for (var i = 0; i < player.length; i++){
-        sum += player[i]["value"];
-    } playerTotals.push(sum)
+        playerTotals = playerTotals + parseInt(player[i]["value"]);
+    }
 };
+
     //Grabs the value of both cards and adds them to dealerTotals
 function dealerTotal() {
     var sum = 0;
@@ -137,41 +141,41 @@ function dealerTotal() {
 
 // Adds a card to the player or dealer hand and runs checkWin.
 function hit() {
-    var temp = 0;
     playerDeal();
     playerTotal();
     playerCardDisplay();
-    temp = playerTotals.pop();
-    if ( temp > 21) {
+    document.getElementById("pCard3").className += playerDisplayedCards[2];
+    document.getElementById("pCard4").className += playerDisplayedCards[3];
+    if ( playerTotals > 21) {
         document.getElementById("gameMessages").innerHTML = "You hit on that...BUST!";
     } else {
-        document.getElementById("gameMessages").innerHTML = `Remember to stay on 17 you have ${temp}`;
+        document.getElementById("gameMessages").innerHTML = `Remember to stay on 17 you have ${playerTotals}`;
     }
 };
 
 function dealerHit() {
+    document.getElementById("dCard2").className += dealerDisplayedCards[1];
     while (dealerTotals <= 16) {
     dealerDeal();
     dealerTotal();
     dealerCardDisplay();
-   dealerTotals = dealerTotals.pop();
-   console.log(dealerTotals)
-    }
-    if (dealerTotals < 21) {
-        console.log(" Over 16 but less than 21")
-    } else if ( dealerTotals > 21) {
+    dealerTotals = dealerTotals.pop();
+    };
+    document.getElementById("dCard3").className += dealerDisplayedCards[2];
+    document.getElementById("dCard4").className += dealerDisplayedCards[3];
+    if ( dealerTotals > 21) {
         document.getElementById("gameMessages").innerHTML = "Dealer Bust, You win!";
     };
-    console.log("Almost there");
 };
 
 function checkWinner() {
     if (playerTotals > dealerTotals && playerTotals <= 21){
-     console.log('Winner winner chicken dinner');
-} else if (playerTotals = dealerTotals) {
-    console.log('Push');
+        document.getElementById("gameMessages").innerHTML = 'Winner winner chicken dinner';
+} else if (playerTotals === dealerTotals) {
+    document.getElementById("gameMessages").innerHTML = 'Push';
+
 } else if (dealerTotals > playerTotals && dealerTotals <= 21 ){
-    console.log('Dealer Wins');
+    document.getElementById("gameMessages").innerHTML = 'Dealer Wins';
 }
 };
     // This will run the dealer function 

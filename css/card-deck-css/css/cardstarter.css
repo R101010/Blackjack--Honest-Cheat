@@ -7,12 +7,12 @@
   /* Set the card's dimensions, and size it relative to
      it's font size. */
   font-size: inherit;
-  width: 4.0em;
-  height: 5.5em;
+  width: 14%;
+  height: 10%;
   /* Add a default background color and border. */
   background-color: white;
   border-radius: 0.20em;
-  border: 1px solid #c3c3c3;
+  border: 4px double orangered;;
   /* Scale and set the background settings. */
   background-repeat: no-repeat;
   background-position: center center;
