@@ -62,11 +62,6 @@ function render(){
 
 };
 
-function testAdd(){
-    
-};
-
-
     //Opens a new pack of cards. 
 function buildDeck() {
     suits.forEach(function(suit) {

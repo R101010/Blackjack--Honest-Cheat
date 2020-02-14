@@ -8,7 +8,10 @@
 The idea behind this game was to make a simple MVP game of Blackjack that would show you tips for card counting. It is called an honest cheat because it gives you an oppertunity to practice card counting in the privacy of your own home. The card counting tips and tricks are icebox feature that will be added at a later time.
 
 ## Screenshot:
+Wire Frame
+https://i.imgur.com/vaWWho5.jpg
 
+Finished product
 https://i.imgur.com/Y5dWlJr.png
 
 ## Technologies Used:
