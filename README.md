@@ -20,7 +20,7 @@ Javascript, HTML, and CSS were some of the technologies used in the making of th
 
 ## Getting Stater:
 
-![Get Started](https://r101010.github.io/Blackjack--Honest-Cheat/)
+[Get Started](https://r101010.github.io/Blackjack--Honest-Cheat/)
 
 **Instructions:**
 
