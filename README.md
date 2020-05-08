@@ -9,10 +9,10 @@ The idea behind this game was to make a simple MVP game of Blackjack that would 
 
 ## Screenshot:
 Wire Frame   
-https://i.imgur.com/vaWWho5.jpg
+![Blackjack-skinny](https://i.imgur.com/vaWWho5.jpg)
 
 Finished product
-https://i.imgur.com/Y5dWlJr.png
+![Blackjack-Fleshed out](https://i.imgur.com/Y5dWlJr.png)
 
 ## Technologies Used:
 
@@ -20,7 +20,7 @@ Javascript, HTML, and CSS were some of the technologies used in the making of th
 
 ## Getting Stater:
 
-https://r101010.github.io/Blackjack--Honest-Cheat/
+![Get Started](https://r101010.github.io/Blackjack--Honest-Cheat/)
 
 **Instructions:**
 
